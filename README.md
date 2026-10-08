@@ -1,5 +1,5 @@
 # JuegosEnRed-GrupoC
-Repositorio del Grupo C: Hugo Rivera, Jesús Mañas y Alejandro Del Campo
+Integrantes del Grupo C: Hugo Rivera, Jesús Mañas y Alejandro Del Campo
 
 <p align="center">
   <img src="img/logo.png" alt="Logotipo de One More Shot" width="400">
@@ -118,3 +118,152 @@ El escenario representa un entorno cerrado tipo "arena", visible en su totalidad
 ![Mapa del escenario](img/mapa_escenario.png)
 
 *Figura 2. Mapa del escenario con zonas de aparición, plataformas y obstáculos.*
+
+---
+
+## 4. Narrativa
+
+### 4.1. Historia
+
+En el año 2084, las disputas legales y las deudas de los bajos fondos ya no se resuelven en los tribunales, sino en un torneo clandestino y letal conocido como *One More Shot*. En esta distopía ciberpunk, los participantes son despojados de su identidad física y sus conciencias son transferidas a avatares digitales minimalistas de luz de neón, conocidos por el público como *stickmans*. 
+
+Lanzados a arenas de combate cerradas y repletas de trampas mortales, armamento experimental y material volátil, los luchadores se enfrentan en un espectáculo caótico retransmitido para las élites de la ciudad. La regla es simple: el último en pie sobrevive para luchar un día más y acercarse a comprar su libertad, mientras que el perdedor es borrado permanentemente del sistema.
+
+### 4.2. Personajes
+
+Aunque mecánicamente el juego es simétrico para mantener el equilibrio competitivo, a nivel narrativo cada avatar representa a un competidor distinto.
+
+#### Jugador 1 
+
+<img src="img/personaje_1.png" alt="Boceto del personaje Jugador 1" width="250">
+
+- **Edad / origen:** XXX
+- **Personalidad:** XXX
+- **Motivación:** XXX
+- **Habilidad especial:** (A nivel narrativo) XXX
+- **Trasfondo:** XXX
+
+#### Jugador 2 
+
+<img src="img/personaje_2.png" alt="Boceto del personaje Jugador 2" width="250">
+
+- **Edad / origen:** XXX
+- **Personalidad:** XXX
+- **Motivación:** XXX
+- **Habilidad especial:** (A nivel narrativo) XXX
+- **Trasfondo:** XXX
+
+---
+
+## 5. Imagen y diseño visual
+
+### 5.1. Logotipo
+
+![Logotipo del juego](img/logo.png)
+
+*Figura 3. Logotipo de One More Shot.*
+
+### 5.2. Estilo visual
+
+El juego utiliza un estilo Pixel Art minimalista creado en Aseprite, combinado con una estética XXX. Los fondos son oscuros para resaltar los contrastes de neón de los personajes, los proyectiles y las explosiones. Esto permite una rápida lectura de la acción en pantalla, esencial para esquivar ataques a alta velocidad y localizar minas o potenciadores.
+
+### 5.3. Uso de colores
+
+![Paleta de colores](img/paleta_colores.png)
+
+*Figura 4. Paleta de colores de One More Shot.*
+
+- **Fondo:** XXX
+- **Jugador 1:** XXX (`#CODIGOCOLOR`).
+- **Jugador 2:** XXX (`#CODIGOCOLOR`).
+- **Objetos, explosiones y minas:** XXX (`#CODIGOCOLOR`, `#CODIGOCOLOR`, `#CODIGOCOLOR`) para advertir del peligro inminente y los impactos.
+
+### 5.4. Aspectos técnicos: cámara y representación
+
+- **Representación:** 2D, vista lateral (plataformas).
+- **Cámara:** Cámara estática que abarca la totalidad de la arena de combate para que ambos jugadores tengan siempre la informacion completa del escenario.
+
+### 5.5. Inspiración artística y cultural
+
+- **NOMBREJUEGO:** XXX.
+- **NOMBREJUEGO:** XXX.
+
+### 5.6. Bocetos de personajes y pantallas
+
+Los bocetos de los personajes se encuentran en el apartado 4.2 y los de las pantallas en el apartado 7.1.
+
+---
+
+## 6. Sonido
+
+### 6.1. Banda sonora
+
+| Pista | Escena | Estilo / ambiente | Fuente / licencia |
+| AmbienteBase | Menú principal | ESTILO XXX | FUENTE XXX |
+| CombateTotal | Partida | ESTILO XXX | FUENTE XXX |
+| PartidaAcabada | Fin Combate | ESTILO XXX | FUENTE XXX |
+
+### 6.2. Efectos de sonido
+
+| Efecto | Momento en que se reproduce |
+| Salto | Al pulsar la tecla de salto (`W` o `↑`). |
+| Disparo normal | Al disparar el arma base o con Fuego Rápido. |
+| Disparo cohete | Al disparar teniendo activo el Lanzacohetes. |
+| Explosión | Al detonar una mina, un cohete o destruir una garrafa. |
+| Activar Mina | Pequeño pitido electrónico al plantar la mina con `Q` o `-`. |
+| Daño | Al perder una vida. |
+
+---
+
+## 7. Interfaz y diagrama de flujo
+
+### 7.1. Pantallas
+
+**Menú principal**
+- Opciones claras en el centro: Jugar, Controles, Créditos, Salir.
+
+**Pantalla de juego (HUD)**
+- Minimalista: Solo se muestran los iconos de las 3 vidas de cada jugador en las esquinas superiores. Debajo de las vidas aparecerá un pequeño (personalizado para cada potenciador) cuando tenga un potenciador activo.
+
+### 7.2. Diagrama de flujo
+
+```mermaid
+flowchart TD
+    A[Pantalla de carga] --> B[Menú principal]
+    B --> C[Jugar]
+    B --> D[Ajustes]
+    B --> F[Créditos]
+    D --> B
+    F --> B
+    C --> G[Partida en la Arena]
+    G -->|Esc| H[Pausa]
+    H -->|Reanudar| G
+    H -->|Salir| B
+    G -->|Pérdida de todas las vidas| I[Fin de partida]
+    I -->|Revancha| G
+    I -->|Volver| B
+```    
+
+---
+
+## 8. Comunicación y marketing
+
+- **Público y mensaje clave:** Dirigido a jugadores competitivos y casuales de 12 a 30 años que buscan partidas rápidas. Destacar la acción frenética, el caos y el uso estratégico del entorno y los potenciadores.
+- **Canales:** Publicar el juego en itch.io. Promocion mediante clips en redes (TikTok, Instagram o X).
+- **Calendario:** Publicación de actualizaciones de desarrollo al finalizar cada etapa de desarrollo. Lanzamiento oficial coincidiendo con la fecha de entrega.
+- **Material:** Capturas del juego, tráiler y gameplays para que la gente pueda ver lo que se encontrará al abrir el juego.
+- **Eslogan:** [One last shot] Make it worth it.
+
+---
+
+## 9. Referencias
+
+[1] XXX (AÑO). NOMBRE. DESCRIPCION
+
+[2] XXX (AÑO). NOMBRE. DESCRIPCION
+
+[3] XXX (AÑO). NOMBRE. DESCRIPCION
+
+
+
+
