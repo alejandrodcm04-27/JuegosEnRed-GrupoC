@@ -1,0 +1,10 @@
+Juegos en Red - Fase 1
+Grupo: C
+Juego: One More Shot
+
+Integrantes:
+- Alumno Uno Alejandro Del Campo    - a.delcampom.2024@alumnos.urjc.es    - GitHub: alejandrodcm04-27
+- Alumno Dos Hugo Rivera            - h.rivera.2024@alumnos.urjc.es       - GitHub: Forni8
+- Alumno Tres Jesús Mañas           - j.manas.2024@alumnos.urjc.es        - GitHub: whitelyon21
+
+Repositorio GitHub: https://github.com/alejandrodcm04-27/JuegosEnRed-GrupoC

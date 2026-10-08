@@ -35,11 +35,11 @@ One More Shot es un juego de acción arcade multijugador en 2D (PvP) en el que c
 
 ### 1.2. Propuesta de valor
 
-¿Qué hace diferente a One More Shot? El juego apuesta por la accesibilidad de controles simples combinada con un alto componente de imprevisibilidad y caos en la arena de combate. 
+¿Qué hace diferente a One More Shot? El juego apuesta por controles simples combinados con caos y combate frenético. 
 
-- **Interactividad letal:** Uso del entorno para atacar, como disparar a garrafas de gasolina que provocan explosiones de área.
-- **Armamento dinámico:** Sistema de *power-ups* aleatorios que alteran drásticamente el flujo del combate (hipervelocidad, instakill, ráfagas...).
-- **Riesgo y recompensa:** Las explosiones ambientales y ciertos modificadores pueden dañar tanto al enemigo como al jugador que los detona.
+- **Interactividad:** Uso del entorno para atacar, como disparar a garrafas de gasolina que provocan explosiones de área.
+- **Armamento dinámico:** Sistema de potenciadores aleatorios que alteran el estado del combate.
+- **Riesgo y recompensa:** Las explosiones de distintos elementos y ciertos potenciadores pueden dañar tanto al enemigo como al jugador que los usa.
 
 ![Imagen promocional / key art del juego](img/portada_presentacion.png)
 
