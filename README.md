@@ -167,6 +167,8 @@ Aunque mecánicamente el juego es simétrico para mantener el equilibrio competi
 
 El juego utiliza un estilo Pixel Art minimalista creado en Aseprite, combinado con una estética XXX. Los fondos son oscuros para resaltar los contrastes de neón de los personajes, los proyectiles y las explosiones. Esto permite una rápida lectura de la acción en pantalla, esencial para esquivar ataques a alta velocidad y localizar minas o potenciadores.
 
+![Moodboard](img/moodboard_inspiracion.png)
+
 ### 5.3. Uso de colores
 
 ![Paleta de colores](img/paleta_colores.png)
