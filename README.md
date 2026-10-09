@@ -169,6 +169,8 @@ El juego utiliza un estilo Pixel Art minimalista creado en Aseprite, combinado c
 
 ![Moodboard](img/moodboard_inspiracion.png)
 
+*Figura X. Inspiracion de One More Shot.*
+
 ### 5.3. Uso de colores
 
 ![Paleta de colores](img/paleta_colores.png)
