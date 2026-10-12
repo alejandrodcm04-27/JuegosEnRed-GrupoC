@@ -87,7 +87,8 @@ El objetivo de cada jugador es eliminar al oponente utilizando armas de fuego, e
 #### 3.3.1. Mecánicas principales
 
 - **Movimiento y Plataformas:** Los personajes pueden moverse lateralmente y saltar para navegar por el nivel y sus distintas alturas del escenario cerrado.
-- **Disparo direccional:** Los jugadores apuntan y disparan en la misma direccion hacia la que se están moviendo, utilizando las teclas de dirección (`W``A``S``D` para el Jugador 1 y las flechas para el Jugador 2).- **Interacción con el entorno:** Disparar a elementos explosivos del mapa (como barriles o garrafas de gasolina) activa una onda expansiva que causa daño en área. El daño es neutral y afecta tanto a enemigos como al propio jugador si está dentro del radio.
+- **Disparo direccional:** Los jugadores apuntan y disparan en la misma direccion hacia la que se están moviendo, utilizando las teclas de dirección (`W``A``S``D` para el Jugador 1 y las flechas para el Jugador 2).
+- **Interacción con el entorno:** Disparar a elementos explosivos del mapa (como barriles o garrafas de gasolina) activa una onda expansiva que causa daño en área. El daño es neutral y afecta tanto a enemigos como al propio jugador si está dentro del radio.
 
 
 #### 3.3.2. Objetos y potenciadores
@@ -125,17 +126,17 @@ El escenario representa un entorno cerrado tipo "arena", visible en su totalidad
 
 ### 4.1. Historia
 
-En el año 2084, las disputas legales y las deudas de los bajos fondos ya no se resuelven en los tribunales, sino en un torneo clandestino y letal conocido como *One More Shot*. En esta distopía ciberpunk, los participantes son despojados de su identidad física y sus conciencias son transferidas a avatares digitales minimalistas de luz de neón, conocidos por el público como *stickmans*. 
-
-Lanzados a arenas de combate cerradas y repletas de trampas mortales, armamento experimental y material volátil, los luchadores se enfrentan en un espectáculo caótico retransmitido para las élites de la ciudad. La regla es simple: el último en pie sobrevive para luchar un día más y acercarse a comprar su libertad, mientras que el perdedor es borrado permanentemente del sistema.
+XXX Contar historia o lore del juego. Que sea algo largo
 
 ### 4.2. Personajes
 
-Aunque mecánicamente el juego es simétrico para mantener el equilibrio competitivo, a nivel narrativo cada avatar representa a un competidor distinto.
+XXX Aunque mecánicamente el juego es simétrico para mantener el equilibrio competitivo, a nivel narrativo cada avatar representa a un competidor distinto.
 
 #### Jugador 1 
 
-<img src="img/personaje_1.png" alt="Boceto del personaje Jugador 1" width="250">
+![Imagen personaje1](img/personaje_1.png)
+
+*Figura X. Boceto del personaje Jugador 1.*
 
 - **Edad / origen:** XXX
 - **Personalidad:** XXX
@@ -145,7 +146,9 @@ Aunque mecánicamente el juego es simétrico para mantener el equilibrio competi
 
 #### Jugador 2 
 
-<img src="img/personaje_2.png" alt="Boceto del personaje Jugador 2" width="250">
+![Imagen personaje2](img/personaje_2.png)
+
+*Figura X. Boceto del personaje Jugador 1.*
 
 - **Edad / origen:** XXX
 - **Personalidad:** XXX
@@ -161,7 +164,7 @@ Aunque mecánicamente el juego es simétrico para mantener el equilibrio competi
 
 ![Logotipo del juego](img/logo.png)
 
-*Figura 3. Logotipo de One More Shot.*
+*Figura X. Logotipo de One More Shot.*
 
 ### 5.2. Estilo visual
 
@@ -175,7 +178,7 @@ El juego utiliza un estilo Pixel Art minimalista creado en Aseprite, combinado c
 
 ![Paleta de colores](img/paleta_colores.png)
 
-*Figura 4. Paleta de colores de One More Shot.*
+*Figura X. Paleta de colores de One More Shot.*
 
 - **Fondo:** XXX
 - **Jugador 1:** XXX (`#CODIGOCOLOR`).
