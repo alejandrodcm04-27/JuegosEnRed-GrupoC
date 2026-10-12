@@ -12,7 +12,7 @@ Integrantes del Grupo C: Hugo Rivera, Jesús Mañas y Alejandro Del Campo
 
 ## Descripción de la temática
 
-One More Shot es un shooter en PixelArt 2D para dos jugadores en red en el amb. Ambientado en AAA, los jugadores deben AAA AAA AAA para AAA AAA.
+One More Shot es un shooter en PixelArt 2D para dos jugadores en red. Ambientado en AAA, los jugadores deben AAA AAA AAA para AAA AAA.
 
 ## Equipo de desarrollo
 
