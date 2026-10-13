@@ -177,7 +177,7 @@ Con el tiempo, Samuel fue ascendiendo de rangos hasta acabar en el puesto más a
 
 ### 5.2. Estilo visual
 
-El juego utiliza un estilo Pixel Art minimalista creado en Aseprite, combinado con una estética futurista. Los fondos son oscuros para resaltar a los personajes, los proyectiles y las explosiones. Esto permite una rápida lectura de lo que sucede en la partida, para esquivar ataques y localizar minas o potenciadores.
+El juego utiliza un estilo Pixel Art minimalista (será creado en Aseprite), combinado con una estética futurista. Los fondos son oscuros para resaltar a los personajes, los proyectiles y las explosiones. Esto permite una rápida lectura de lo que sucede en la partida, para esquivar ataques y localizar minas o potenciadores.
 
 ![Moodboard](img/moodboard_inspiracion.png)
 
