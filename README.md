@@ -197,10 +197,11 @@ El juego utiliza un estilo Pixel Art minimalista (será creado en Aseprite), com
 
 *Figura 8. Paleta de colores de One More Shot.*
 
-- **Fondo:** XXX
-- **Jugador 1:** XXX (`#CODIGOCOLOR`).
-- **Jugador 2:** XXX (`#CODIGOCOLOR`).
-- **Objetos, explosiones y minas:** XXX (`#CODIGOCOLOR`, `#CODIGOCOLOR`, `#CODIGOCOLOR`) para advertir del peligro inminente y los impactos.
+- **Fondo:** #000000
+- **Jugador 1:** #9F00F7 
+- **Jugador 2:** #FF0000
+- **Objetos:** #0AFF00 
+- **Texto/UI:** #464646
 
 ### 5.4. Aspectos técnicos: cámara y representación
 
@@ -299,9 +300,11 @@ flowchart TD
 
 ## 9. Referencias
 
-[1] XXX (AÑO). NOMBRE. DESCRIPCION
+[1] Bungie (2001). Halo. Referencia para el trasfondo del "Programa Spartan" y los supersoldados.
 
-[2] XXX (AÑO). NOMBRE. DESCRIPCION
+[2] Arrowhead Game Studios (2024). Helldivers 2. Referencia para el contexto espacial y los planetas Meridia y Malevelon Creek.
+
+[3] CD Projekt Red (2020). Cyberpunk 2077. Referencia temática, estética y la figura del cazarrecompensas letal.
 
 
 
