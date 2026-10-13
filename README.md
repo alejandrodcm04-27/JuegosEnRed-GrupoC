@@ -12,7 +12,7 @@ Integrantes del Grupo C: Hugo Rivera, Jesús Mañas y Alejandro Del Campo
 
 ## Descripción de la temática
 
-One More Shot es un shooter en PixelArt 2D para dos jugadores en red. Ambientado en AAA, los jugadores deben AAA AAA AAA para AAA AAA.
+One More Shot es un shooter en PixelArt 2D para dos jugadores en red. Ambientado en un mundo futurista, los jugadores deben luchar entre ellos usando potenciadores y habilidades para poder ganar la partida.
 
 ## Equipo de desarrollo
 
@@ -114,7 +114,7 @@ Cada jugador posee **3 vidas** representadas en el HUD. Un impacto directo con d
 
 ### 3.5. Escenario
 
-El escenario representa un entorno cerrado tipo "arena", visible en su totalidad sin *scroll* de cámara (single-screen). Se compone de plataformas ubicadas a diferentes alturas para fomentar el movimiento vertical.
+El escenario representa un entorno cerrado tipo "arena", visible en su totalidad sin movimiento de cámara. Se compone de plataformas ubicadas a diferentes alturas para fomentar el movimiento vertical.
 
 ![Mapa del escenario](img/mapa_escenario.png)
 
@@ -126,11 +126,18 @@ El escenario representa un entorno cerrado tipo "arena", visible en su totalidad
 
 ### 4.1. Historia
 
-XXX Contar historia o lore del juego. Que sea algo largo
+Es el año 2525, a la humanidad de unas pocas décadas atrás jamás se le habría ocurrido que en tan poco tiempo se habrían expandido ni fundado grandes ciudades por las estrellas.
+Los avances tecnológicos habían permitido a la humanidad no solo viajar a otros planetas con facilidad, sino también crear atmósferas y suministros adaptados a las capacidades de cada planeta, pudiendo así asentarse y formar enormes ciudades de colores neón en lugares que antes solo se podían observar por un telescopio. La Tierra ya no era el centro del universo, solo un punto más, una nueva era dorada había comenzado.
+
+Como era de esperar, no todo eran sueños hechos realidad en las ya no tan nuevas colonias espaciales. Pobreza, delincuencia, corrupción y violencia eran el pan de cada día para los más desafortunados. A algunos de esos desafortunados, se les otorgó la posibilidad de tratar de arreglar las cosas, unirse a un proyecto de supersoldados denominado “Programa Spartan” .
+Mientras tanto, otros veían un camino que seguir para ganarse la vida: ser un Cazarecompensas.
+
+Nuestros protagonistas, cada uno de un bando pero no tan distintos entre sí, habían recibido la misma misión y mismo encargo, detenerse el uno al otro.
+
 
 ### 4.2. Personajes
 
-XXX Aunque mecánicamente el juego es simétrico para mantener el equilibrio competitivo, a nivel narrativo cada avatar representa a un competidor distinto.
+Aunque mecánicamente el juego es simétrico para mantener el equilibrio competitivo, a nivel narrativo cada avatar representa a un competidor distinto.
 
 #### Jugador 1 
 
@@ -138,11 +145,13 @@ XXX Aunque mecánicamente el juego es simétrico para mantener el equilibrio com
 
 *Figura X. Boceto del personaje Jugador 1.*
 
-- **Edad / origen:** XXX
-- **Personalidad:** XXX
-- **Motivación:** XXX
-- **Habilidad especial:** (A nivel narrativo) XXX
-- **Trasfondo:** XXX
+- **Edad / origen:** 24 / Meridia
+- **Personalidad:** Seria, decidida y tranquila.
+- **Motivación:**  Acabar con la delincuencia para crear un futuro justo y seguro.
+- **Habilidad especial:** (A nivel narrativo) “Ultimate Agility”: puede moverse por cualquier terreno o superficie sin importar que tan alta o empinada esté.
+- **Trasfondo:**  Uno de los huérfanos y de las muchas víctimas afectadas tras la destrucción de su planeta natal, Meridia, que se unió al Programa Spartan. Samuel Sampers, tenía algo que lo hacía diferente a muchos, su determinación a lograr un futuro mejor. Manchandose las manos mientras el mundo dormía.
+Con el tiempo, Samuel fue ascendiendo de rangos hasta acabar en el puesto más alto que se le podía conceder. Siendo enviado a misiones en solitario que en ningún expediente aparecían como fracasadas. Samuel no fallaba ni jamás, haciendo honor a su apodo de Null Sound, era visto.
+
 
 #### Jugador 2 
 
@@ -150,11 +159,11 @@ XXX Aunque mecánicamente el juego es simétrico para mantener el equilibrio com
 
 *Figura X. Boceto del personaje Jugador 1.*
 
-- **Edad / origen:** XXX
-- **Personalidad:** XXX
-- **Motivación:** XXX
-- **Habilidad especial:** (A nivel narrativo) XXX
-- **Trasfondo:** XXX
+- **Edad / origen:** 28 / Malevelon Creek
+- **Personalidad:** Fría, irritable y confiado.
+- **Motivación:** Vivir como no pudo de niño, haciendo lo que le dé la gana.
+- **Habilidad especial:** (A nivel narrativo) “Free Time”: Un implante neuronal le permite desplazarse a grandes velocidades como si el mundo a su alrededor fuese a cámara lenta.
+- **Trasfondo:**  Edge Riot: un cazarecompensas de nombre desconocido y de apodo casi igual de misterioso debido a la poca gente que sobrevivía sabiéndolo, únicamente conocido lo suficiente como para recibir los mejores encargos que alguien podía recibir en aquella sociedad. Poco se sabe de él, tan solo que sus habilidades y destreza le permitían acabar con cualquier objetivo y que es incapaz de sentir dolor.
 
 ---
 
@@ -168,7 +177,7 @@ XXX Aunque mecánicamente el juego es simétrico para mantener el equilibrio com
 
 ### 5.2. Estilo visual
 
-El juego utiliza un estilo Pixel Art minimalista creado en Aseprite, combinado con una estética XXX. Los fondos son oscuros para resaltar los contrastes de neón de los personajes, los proyectiles y las explosiones. Esto permite una rápida lectura de la acción en pantalla, esencial para esquivar ataques a alta velocidad y localizar minas o potenciadores.
+El juego utiliza un estilo Pixel Art minimalista creado en Aseprite, combinado con una estética futurista. Los fondos son oscuros para resaltar a los personajes, los proyectiles y las explosiones. Esto permite una rápida lectura de lo que sucede en la partida, para esquivar ataques y localizar minas o potenciadores.
 
 ![Moodboard](img/moodboard_inspiracion.png)
 
@@ -192,8 +201,8 @@ El juego utiliza un estilo Pixel Art minimalista creado en Aseprite, combinado c
 
 ### 5.5. Inspiración artística y cultural
 
-- **NOMBREJUEGO:** XXX.
-- **NOMBREJUEGO:** XXX.
+- **Halo y Ciberpunk:** Principales referentes narrativo y estéticos. Tomamos el concepto del "Programa Spartan" de supersoldados del Halo.
+- **Helldivers 2:** Contexto de expansión espacial y los nombres de los planetas de origen de los personajes (Meridia, Malevelon Creek).
 
 ### 5.6. Bocetos de personajes y pantallas
 
@@ -206,9 +215,9 @@ Los bocetos de los personajes se encuentran en el apartado 4.2 y los de las pant
 ### 6.1. Banda sonora
 
 | Pista | Escena | Estilo / ambiente | Fuente / licencia |
-| AmbienteBase | Menú principal | ESTILO XXX | FUENTE XXX |
-| CombateTotal | Partida | ESTILO XXX | FUENTE XXX |
-| PartidaAcabada | Fin Combate | ESTILO XXX | FUENTE XXX |
+| AmbienteBase | Menú principal | ESTILO Synthwave ambiental / Electrónica retro | FUENTE [XXX](https://pixabay.com/) |
+| CombateTotal | Partida | ESTILO Darksynth agresivo / Cyberpunk | FUENTE [XXX](https://pixabay.com/) |
+| PartidaAcabada | Fin Combate | ESTILO Phunk | FUENTE [XXX](https://pixabay.com/) |
 
 ### 6.2. Efectos de sonido
 
@@ -269,9 +278,6 @@ flowchart TD
 
 [2] XXX (AÑO). NOMBRE. DESCRIPCION
 
-[3] XXX (AÑO). NOMBRE. DESCRIPCION
-
-[3] XXX (AÑO). NOMBRE. DESCRIPCION
 
 
 
