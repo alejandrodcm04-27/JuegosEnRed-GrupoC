@@ -17,6 +17,7 @@ One More Shot es un shooter en PixelArt 2D para dos jugadores en red. Ambientado
 ## Equipo de desarrollo
 
 | Nombre y apellidos | Correo URJC | GitHub |
+| :--- | :--- | :--- |
 | Alejandro Del Campo | a.delcampom.2024@alumnos.urjc.es | `@alejandrodcm04-27` |
 | Hugo Rivera | h.rivera.2024@alumnos.urjc.es | `@Forni8` |
 | Jesús Mañas | j.manas.2024@alumnos.urjc.es | `@whitelyon21` |
@@ -50,6 +51,7 @@ One More Shot es un juego de acción arcade multijugador en 2D (PvP) en el que c
 ## 2. Especificaciones básicas
 
 | Aspecto | Descripción |
+| :--- | :--- |
 | **Título** | One More Shot |
 | **Género** | Arena Shooter / Acción Arcade PvP |
 | **Número de jugadores** | 2 (en red/local, tiempo real) |
@@ -71,6 +73,7 @@ El objetivo de cada jugador es eliminar al oponente utilizando armas de fuego, e
 ### 3.2. Controles
 
 | Acción | Jugador 1 | Jugador 2 |
+| :--- | :--- | :--- |
 | Moverse a la izquierda | `A` | `←` |
 | Moverse a la derecha | `D` | `→` |
 | Saltar | `W` | `↑` |
@@ -94,6 +97,7 @@ El objetivo de cada jugador es eliminar al oponente utilizando armas de fuego, e
 #### 3.3.2. Objetos y potenciadores
 
 | Objeto | Efecto | Duración | Aparición |
+| :--- | :--- | :--- | :--- |
 | **Minas** | Crea una explosión de radio pequeño. La puede activar el jugador que la pone o por contacto. | Indefinida | 3 por jugador por partida |
 | **Impulso de Velocidad** | Aumenta significativamente la velocidad de movimiento del personaje. | 8 s | Aleatoria |
 | **Muerte instantanea** | Las balas matan de un solo impacto | 1 disparo | Aleatoria |
@@ -219,6 +223,7 @@ Los bocetos de los personajes se encuentran en el apartado 4.2 y los de las pant
 ### 6.1. Banda sonora
 
 | Pista | Escena | Estilo / ambiente | Fuente / licencia |
+| :--- | :--- | :--- | :--- |
 | AmbienteBase | Menú principal | ESTILO Synthwave ambiental / Electrónica retro | FUENTE (https://pixabay.com/) |
 | CombateTotal | Partida | ESTILO Darksynth agresivo / Cyberpunk | FUENTE (https://pixabay.com/) |
 | PartidaAcabada | Fin Combate | ESTILO Phunk | FUENTE (https://pixabay.com/) |
@@ -226,6 +231,7 @@ Los bocetos de los personajes se encuentran en el apartado 4.2 y los de las pant
 ### 6.2. Efectos de sonido
 
 | Efecto | Momento en que se reproduce |
+| :--- | :--- | 
 | Salto | Al pulsar la tecla de salto (`W` o `↑`). |
 | Disparo normal | Al disparar el arma base o con Fuego Rápido. |
 | Disparo cohete | Al disparar teniendo activo el Lanzacohetes. |
