@@ -215,9 +215,9 @@ Los bocetos de los personajes se encuentran en el apartado 4.2 y los de las pant
 ### 6.1. Banda sonora
 
 | Pista | Escena | Estilo / ambiente | Fuente / licencia |
-| AmbienteBase | Menú principal | ESTILO Synthwave ambiental / Electrónica retro | FUENTE [XXX](https://pixabay.com/) |
-| CombateTotal | Partida | ESTILO Darksynth agresivo / Cyberpunk | FUENTE [XXX](https://pixabay.com/) |
-| PartidaAcabada | Fin Combate | ESTILO Phunk | FUENTE [XXX](https://pixabay.com/) |
+| AmbienteBase | Menú principal | ESTILO Synthwave ambiental / Electrónica retro | FUENTE (https://pixabay.com/) |
+| CombateTotal | Partida | ESTILO Darksynth agresivo / Cyberpunk | FUENTE (https://pixabay.com/) |
+| PartidaAcabada | Fin Combate | ESTILO Phunk | FUENTE (https://pixabay.com/) |
 
 ### 6.2. Efectos de sonido
 
