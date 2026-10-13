@@ -120,6 +120,10 @@ El escenario representa un entorno cerrado tipo "arena", visible en su totalidad
 
 *Figura 2. Mapa del escenario con zonas de aparición, plataformas y obstáculos.*
 
+![Mapa del escenario](img/boceto_pantalla_juego.png)
+
+*Figura 3. Primer diseño base escenario.*
+
 ---
 
 ## 4. Narrativa
@@ -143,7 +147,7 @@ Aunque mecánicamente el juego es simétrico para mantener el equilibrio competi
 
 ![Imagen personaje1](img/personaje_1.png)
 
-*Figura X. Boceto del personaje Jugador 1.*
+*Figura 4. Boceto del personaje Jugador 1.*
 
 - **Edad / origen:** 24 / Meridia
 - **Personalidad:** Seria, decidida y tranquila.
@@ -157,7 +161,7 @@ Con el tiempo, Samuel fue ascendiendo de rangos hasta acabar en el puesto más a
 
 ![Imagen personaje2](img/personaje_2.png)
 
-*Figura X. Boceto del personaje Jugador 1.*
+*Figura 5. Boceto del personaje Jugador 1.*
 
 - **Edad / origen:** 28 / Malevelon Creek
 - **Personalidad:** Fría, irritable y confiado.
@@ -173,7 +177,7 @@ Con el tiempo, Samuel fue ascendiendo de rangos hasta acabar en el puesto más a
 
 ![Logotipo del juego](img/logo.png)
 
-*Figura X. Logotipo de One More Shot.*
+*Figura 6. Logotipo de One More Shot.*
 
 ### 5.2. Estilo visual
 
@@ -181,13 +185,13 @@ El juego utiliza un estilo Pixel Art minimalista (será creado en Aseprite), com
 
 ![Moodboard](img/moodboard_inspiracion.png)
 
-*Figura X. Inspiracion de One More Shot.*
+*Figura 7. Inspiracion de One More Shot.*
 
 ### 5.3. Uso de colores
 
 ![Paleta de colores](img/paleta_colores.png)
 
-*Figura X. Paleta de colores de One More Shot.*
+*Figura 8. Paleta de colores de One More Shot.*
 
 - **Fondo:** XXX
 - **Jugador 1:** XXX (`#CODIGOCOLOR`).
@@ -236,10 +240,25 @@ Los bocetos de los personajes se encuentran en el apartado 4.2 y los de las pant
 ### 7.1. Pantallas
 
 **Menú principal**
-- Opciones claras en el centro: Jugar, Controles, Créditos, Salir.
+- Opciones claras en el centro: Jugar, Ajustes, Ayuda, Créditos y Salir.
 
-**Pantalla de juego (HUD)**
-- Minimalista: Solo se muestran los iconos de las 3 vidas de cada jugador en las esquinas superiores. Debajo de las vidas aparecerá un pequeño (personalizado para cada potenciador) cuando tenga un potenciador activo.
+![Menú principal](img/boceto_menu_principal.png)
+
+*Figura 9. Menú Principal de One More Shot.*
+
+**Pantalla de ajustes**
+- Solo se muestran los ajustes de volumen, Gráficos, Controles y Resolución.
+
+![Menú ajustes](img/boceto_ajustes.png)
+
+*Figura 10. Menú Ajustes de One More Shot.*
+
+**Pantalla de fin de partida**
+- Muestra el ganador y al poco tiempo se vuelve al menú principal.
+
+![Menú ajustes](img/boceto_fin_partida.png)
+
+*Figura 11. Menú Fin de Partida de One More Shot.*
 
 ### 7.2. Diagrama de flujo
 
