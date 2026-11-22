@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { MenuUI } from '../ui/MenuUI.js';
 
 export class PauseScene extends Phaser.Scene {
     constructor() {
@@ -6,26 +7,34 @@ export class PauseScene extends Phaser.Scene {
     }
 
     create() {
-        this.add.rectangle(400, 300, 800, 600, 0x000000, 0.7);
+        const { width, height, centerX: cx, centerY: cy } = this.cameras.main;
 
-        this.add.text(400, 200, 'Game Paused', { fontSize: '64px' }).setOrigin(0.5);
+        this.add.rectangle(cx, cy, width, height, 0x000000, 0.65);
+        this.add.rectangle(cx, cy, 440, 290, 0x12152a, 0.95).setStrokeStyle(2, 0x0F9BD7);
 
-        const resumeBtn = this.add.text(400, 320, 'Resume', { fontSize: '32px', color: '#00ff00' }).setOrigin(0.5)
-            .setInteractive({ useHandCursor: true })
-            .on('pointerover', () => resumeBtn.setStyle({ color: '#ffff00' }))
-            .on('pointerout', () => resumeBtn.setStyle({ color: '#00ff00' }))
-            .on('pointerdown', () => {
-                this.scene.stop();
-                this.scene.resume('GameScene');
-            });
+        this.add.text(cx, cy - 88, 'PAUSA', {
+            fontFamily: 'Courier New, monospace',
+            fontSize: '40px',
+            fontStyle: 'bold',
+            color: '#F5C518'
+        }).setOrigin(0.5);
 
-        const menuBtn = this.add.text(400, 400, 'Menu', { fontSize: '32px', color: '#00ff00' }).setOrigin(0.5)
-            .setInteractive({ useHandCursor: true })
-            .on('pointerover', () => menuBtn.setStyle({ color: '#ffff00' }))
-            .on('pointerout', () => menuBtn.setStyle({ color: '#00ff00' }))
-            .on('pointerdown', () => {
-                this.scene.stop('GameScene');
-                this.scene.start('MenuScene');
-            });
+        MenuUI.addButton(this, cx, cy - 10, 'CONTINUAR', '#0F9BD7', () => {
+            this.resumeGame();
+        }, 300, 48);
+
+        MenuUI.addButton(this, cx, cy + 62, 'VOLVER AL MENÚ', '#E94560', () => {
+            this.scene.stop('GameScene');
+            this.scene.start('MenuScene');
+        }, 300, 48);
+
+        this.input.keyboard.once('keydown-ESC', () => {
+            this.resumeGame();
+        });
+    }
+
+    resumeGame() {
+        this.scene.resume('GameScene');
+        this.scene.stop();
     }
 }
