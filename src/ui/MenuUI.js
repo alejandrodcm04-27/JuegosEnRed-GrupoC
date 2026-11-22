@@ -27,7 +27,19 @@ export const MenuUI = {
         }).setOrigin(0.5);
     },
 
-    addButton(scene, x, y, text, baseColor, onClick, w = 340, h = 50) {
+    addButton(scene, x, y, text, baseColor, onClick, w = 340, h = 50, disabled = false) {
+        if (disabled) {
+            const bg = scene.add.rectangle(x, y, w, h, 0x12152a, 0.5)
+                .setStrokeStyle(2, 0x4b5270, 0.7);
+            const label = scene.add.text(x, y, text, {
+                fontFamily: 'Courier New, monospace',
+                fontSize: '22px',
+                fontStyle: 'bold',
+                color: '#6c759c'
+            }).setOrigin(0.5);
+            return { bg, label };
+        }
+
         const colorInt = Phaser.Display.Color.HexStringToColor(baseColor).color;
 
         const bg = scene.add.rectangle(x, y, w, h, 0x12152a, 0.88)

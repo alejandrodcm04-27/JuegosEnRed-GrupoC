@@ -11,11 +11,11 @@ export class MenuScene extends Phaser.Scene {
         MenuUI.addBackground(this);
 
         if (this.textures.exists('logo') && this.textures.get('logo').key !== '__MISSING') {
-            const logo = this.add.image(cx, cy - 170, 'logo');
+            const logo = this.add.image(cx, cy - 190, 'logo');
             const scale = Math.min(480 / logo.width, 190 / logo.height);
             logo.setScale(scale);
         } else {
-            this.add.text(cx, cy - 170, 'ONE MORE SHOT', {
+            this.add.text(cx, cy - 190, 'ONE MORE SHOT', {
                 fontFamily: 'Courier New, monospace',
                 fontSize: '64px',
                 fontStyle: 'bold',
@@ -27,15 +27,24 @@ export class MenuScene extends Phaser.Scene {
 
         const buttons = [
             { label: 'JUGAR (LOCAL 2P)', scene: 'GameScene', color: '#0F9BD7' },
+            { label: 'JUGAR ONLINE', disabled: true },
             { label: 'AJUSTES', scene: 'SettingsScene', color: '#ffffff' },
             { label: 'AYUDA / CONTROLES', scene: 'HelpScene', color: '#ffffff' },
             { label: 'CRÉDITOS', scene: 'CreditsScene', color: '#ffffff' }
         ];
 
         buttons.forEach((btn, idx) => {
-            MenuUI.addButton(this, cx, cy + 10 + idx * 72, btn.label, btn.color, () => {
-                MenuUI.transitionTo(this, btn.scene);
-            });
+            MenuUI.addButton(
+                this,
+                cx,
+                cy - 20 + idx * 64,
+                btn.label,
+                btn.color || '#6c759c',
+                () => MenuUI.transitionTo(this, btn.scene),
+                340,
+                48,
+                Boolean(btn.disabled)
+            );
         });
     }
 }

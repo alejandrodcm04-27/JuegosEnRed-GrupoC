@@ -1,178 +1,132 @@
 import Phaser from 'phaser';
-import { Paddle } from '../entities/Paddle';
+import { Player } from '../entities/Player.js';
 
 export class GameScene extends Phaser.Scene {
     constructor() {
         super('GameScene');
     }
 
-    init() {
-        this.players = new Map();
-        this.inputMappings = [];
-    }
-
-    preload() {
-        // Load assets
-        this.load.image('paddle', 'assets/images/paddle.png')
-
-        // Hit sound
-        this.load.audio('hit', 'assets/audio/hit.mp3');
-
-        // Background music
-        this.load.audio('music', 'assets/audio/music.mp3');
-    }
-
     create() {
-        // Looping background music
-        this.music = this.sound.add('music', { loop: true, volume: 0.3 });
-        this.music.play();
+        const { width, height, centerX: cx, centerY: cy } = this.cameras.main;
+        this.cameras.main.fadeIn(250, 14, 16, 32);
 
-        // Pause/resume the music with the scene and stop it on exit
-        this.events.on('pause', () => this.music.pause());
-        this.events.on('resume', () => this.music.resume());
-        this.events.once('shutdown', () => {
-            this.events.off('pause');
-            this.events.off('resume');
-            this.music.destroy();
+        // Fondo (mismo que menu cmbiar)
+        this.add.image(cx, cy, 'fondo').setDisplaySize(width, height);
+        this.add.rectangle(cx, cy, width, height, 0x0e1020, 0.55);
+
+        //suelo
+        this.solidPlatforms = this.physics.add.staticGroup();
+        const floor = this.solidPlatforms.create(cx, height - 18, 'suelo');
+        floor.setDisplaySize(width, 36).refreshBody();
+
+        //Plataformas atraviesan
+        this.oneWayPlatforms = this.physics.add.staticGroup();
+        const layout = [
+            { x: 240, y: 525, w: 250 },
+            { x: width - 240, y: 525, w: 250 },
+            { x: cx, y: 425, w: 250 },
+            { x: 200, y: 325, w: 250 },
+            { x: width - 200, y: 325, w: 250 },
+            { x: cx, y: 225, w: 250 },
+            { x: cx, y: 600, w: 250 }
+        ];
+
+        layout.forEach((p) => {
+            const plat = this.oneWayPlatforms.create(p.x, p.y, 'plataforma');
+            plat.setDisplaySize(p.w, 40).refreshBody();
         });
 
-        this.leftGoals = 0;
-        this.rightGoals = 0;
+        // Plataforma móvil 
+        this.movingPlatform = this.physics.add.image(cx, 125, 'plataforma_movil');
+        this.movingPlatform.setDisplaySize(160, 36);
+        this.movingPlatform.body.setImmovable(true).setAllowGravity(false);
+        this.movingPlatform.setVelocityX(120);
 
-        // Add mid line
-        for (let i = 0; i < 12; i++) {
-            this.add.rectangle(400, i * 50 + 25, 10, 30, 0x666666);
-        }
+        //Spot Jugadores
+        this.player1 = new Player(this, 180, height - 90, 'player1_tex', 'player1', 1);
+        this.player2 = new Player(this, width - 180, height - 90, 'player2_tex', 'player2', -1);
+        this.players = [this.player1, this.player2];
 
-        // Scores
-        this.scoreLeft = this.add.text(200, 50, '0', { fontSize: '48px' }).setOrigin(0.5);
-        this.scoreRight = this.add.text(600, 50, '0', { fontSize: '48px' }).setOrigin(0.5);
-
-        // Collisions on all sides 
-        this.physics.world.setBoundsCollision(false, false, true, true);
-
-        // Create the box
-        this.createBall();
-
-        // Launch the ball
-        this.resetBall();
-
-        // Setup players
-        this.setUpPlayers();
-
-        // Setup collisions
-        this.players.forEach(paddle => {
-            this.physics.add.collider(this.ball, paddle.sprite, () => {
-                this.sound.play('hit');
-            });
+        // Colisiones
+        this.physics.add.collider(this.players, this.solidPlatforms);
+        this.physics.add.collider(this.players, this.movingPlatform, null, (player, plat) => {
+            return this.canLandOnOneWay(player, plat);
+        });
+        this.physics.add.collider(this.players, this.oneWayPlatforms, null, (player, plat) => {
+            return this.canLandOnOneWay(player, plat);
         });
 
-        // Pause with ESC and show the pause menu on top
+        //HUD
+        this.createHUD();
+
+        //pause con Escape
         this.input.keyboard.on('keydown-ESC', () => {
-            this.scene.pause();
             this.scene.launch('PauseScene');
+            this.scene.pause();
         });
     }
 
-    setUpPlayers() {
-        const player1 = new Paddle(this, 'player1', 50, 300);
-        const player2 = new Paddle(this, 'player2', 750, 300);
-
-        this.players.set(player1.id, player1);
-        this.players.set(player2.id, player2);
-
-        const Keys = Phaser.Input.Keyboard.KeyCodes;
-        this.inputMappings = [
-            {paddle: player1, up: Keys.W, down: Keys.S},
-            {paddle: player2, up: Keys.UP, down: Keys.DOWN}
-        ].map(mapping => ({
-            paddle: mapping.paddle,
-            upKey: this.input.keyboard.addKey(mapping.up),
-            downKey: this.input.keyboard.addKey(mapping.down)
-        }));
-    }
-    
-    resetBall() {
-        this.ball.setVelocity(0, 0);
-        this.ball.setPosition(400, 300);
-        this.time.delayedCall(2000, () => this.launchBall());
+    canLandOnOneWay(player, platform) {
+        if (this.time.now < player.droppingUntil) return false;
+        return player.body.velocity.y >= 0 && player.body.bottom <= platform.body.top + 14;
     }
 
-    launchBall() {
-        const angle = Phaser.Math.Between(-30, 30);
-        const speed = 400;
-        const direction = Math.random() < 0.5 ? 1 : -1;
+    createHUD() {
+        const { width } = this.cameras.main;
 
-        const speedX = Math.cos(Phaser.Math.DegToRad(angle)) * speed * direction;
-        const speedY = Math.sin(Phaser.Math.DegToRad(angle)) * speed;
-        this.ball.setVelocity(
-            speedX, speedY
-        );
-    }
+        this.p1Hearts = [];
+        this.p2Hearts = [];
 
-    createBall() {
-        const graphics = this.add.graphics();
-        graphics.fillStyle(0xffffff);
-        graphics.fillCircle(8, 8, 8);
-        graphics.generateTexture('ball', 16, 16);
-        graphics.destroy();
+        // J1
+        this.add.text(28, 30, 'J1', {
+            fontFamily: 'Courier New, monospace',
+            fontSize: '24px',
+            fontStyle: 'bold',
+            color: '#0F9BD7'
+        }).setOrigin(0, 0.5);
 
-        this.ball = this.physics.add.image(400, 300, 'ball').setOrigin(0.5);
-        this.ball.setCollideWorldBounds(true);
-        this.ball.setBounce(1);
-
-    }
-
-    goal() {
-        this.scoreRight.setText(this.rightGoals.toString());
-        this.scoreLeft.setText(this.leftGoals.toString());
-
-        if (this.leftGoals + this.rightGoals >= 3) {
-            const winnerId = this.leftGoals > this.rightGoals ? 'player1' : 'player2';
-            this.endGame(winnerId);
-        } else {
-            this.resetBall();
+        for (let i = 0; i < 3; i++) {
+            const icon = this.add.image(88 + i * 40, 30, 'vida').setDisplaySize(32, 32);
+            this.p1Hearts.push(icon);
         }
+
+        // J2
+        this.add.text(width - 28, 30, 'J2', {
+            fontFamily: 'Courier New, monospace',
+            fontSize: '24px',
+            fontStyle: 'bold',
+            color: '#E94560'
+        }).setOrigin(1, 0.5);
+
+        for (let i = 0; i < 3; i++) {
+            const icon = this.add.image(width - 88 - i * 40, 30, 'vida').setDisplaySize(32, 32);
+            this.p2Hearts.push(icon);
+        }
+
+        this.updateHUD();
     }
 
-    endGame(winnerId) {
-        this.ball.setVelocity(0, 0);
-        this.ball.setPosition(400, 300);
-        this.ball.setVisible(false);
-        this.players.forEach(paddle => { paddle.sprite.setVelocity(0, 0); });
-        this.physics.pause();
-
-        const winnerText = winnerId === 'player1' ? 'Player 1 Wins!' : 'Player 2 Wins!';
-        this.add.text(400, 250, winnerText, { fontSize: '48px' }).setOrigin(0.5);
-
-        const menuBtn = this.add.text(400, 350, 'Menu', { fontSize: '32px', color: '#00ff00' }).setOrigin(0.5)
-            .setInteractive({ useHandCursor: true })
-            .on('pointerover', () => menuBtn.setStyle({ color: '#ffff00' }))
-            .on('pointerout', () => menuBtn.setStyle({ color: '#00ff00' }))
-            .on('pointerdown', () => this.scene.start('MenuScene'));
-    }
-
-    update(time, delta) {
-
-        this.inputMappings.forEach(mapping => {
-            const paddle = mapping.paddle;
-
-            if (mapping.upKey.isDown) {
-                paddle.sprite.setVelocityY(-paddle.speed);
-            } else if (mapping.downKey.isDown) {
-                paddle.sprite.setVelocityY(paddle.speed);
-            } else {
-                paddle.sprite.setVelocityY(0);
-            }
+    updateHUD() {
+        this.p1Hearts.forEach((icon, i) => {
+            icon.setAlpha(i < this.player1.lives ? 1 : 0.2);
         });
 
-        // Game loop
-        if (this.ball.x < 0) {
-            this.rightGoals += 1;
-            this.goal();
-        } else if (this.ball.x > 800) {
-            this.leftGoals += 1;
-            this.goal();
+        this.p2Hearts.forEach((icon, i) => {
+            icon.setAlpha(i < this.player2.lives ? 1 : 0.2);
+        });
+    }
+
+    update(time) {
+        const { centerX: cx } = this.cameras.main;
+
+        //pkat movil hacemos que se mueva con rango
+        if (this.movingPlatform.x >= cx + 375) {
+            this.movingPlatform.setVelocityX(-120);
+        } else if (this.movingPlatform.x <= cx - 375) {
+            this.movingPlatform.setVelocityX(120);
         }
+
+        this.player1.update(time);
+        this.player2.update(time);
     }
 }

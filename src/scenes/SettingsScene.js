@@ -13,12 +13,12 @@ export class SettingsScene extends Phaser.Scene {
         MenuUI.addBackground(this, true);
         MenuUI.addTitle(this, 'AJUSTES');
 
-        // --- VOLUMEN ---
+        //VOLUMEN
         this.volumeTexts = {};
         this.createVolumeControl(cx, cy - 220, 'Volumen Música', 'musicVolume');
         this.createVolumeControl(cx, cy - 170, 'Volumen Efectos', 'sfxVolume');
 
-        // --- CONTROLES ---
+        //cONTROLES
         const actions = [
             { key: 'left', label: 'Izquierda' },
             { key: 'right', label: 'Derecha' },
@@ -47,7 +47,7 @@ export class SettingsScene extends Phaser.Scene {
             this.listeningFor = null;
         });
 
-        // --- BOTONES INFERIORES ---
+        //botones
         const resetBtn = this.add.text(cx - 210, height - 52, '[ RESTABLECER POR DEFECTO ]', {
             fontFamily: 'Courier New, monospace',
             fontSize: '20px',
