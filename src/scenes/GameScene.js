@@ -11,8 +11,7 @@ export class GameScene extends Phaser.Scene {
         this.cameras.main.fadeIn(250, 14, 16, 32);
 
         // Fondo (mismo que menu cmbiar)
-        this.add.image(cx, cy, 'fondo').setDisplaySize(width, height);
-        this.add.rectangle(cx, cy, width, height, 0x0e1020, 0.55);
+        this.add.image(cx, cy, 'fondo_partida').setDisplaySize(width, height);
 
         //suelo
         this.solidPlatforms = this.physics.add.staticGroup();
