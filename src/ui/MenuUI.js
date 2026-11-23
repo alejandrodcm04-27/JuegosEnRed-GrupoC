@@ -50,7 +50,7 @@ export const MenuUI = {
         }).setOrigin(0.5);
 
         bg.on('pointerover', () => {
-            bg.setFillStyle(0x23294f, 0.75);
+            bg.setFillStyle(0x000000, 0.75);
             bg.setStrokeStyle(2, 0x0AFF00);
             label.setColor('#0AFF00');
         });

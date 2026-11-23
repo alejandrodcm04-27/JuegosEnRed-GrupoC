@@ -76,18 +76,19 @@ export class GameScene extends Phaser.Scene {
 
         //posiciones del powerip
         this.powerupSpots = [
-            { x: 200, y: 280 },
-            { x: width - 200, y: 280 },
-            { x: cx, y: 380 },
-            { x: 170, y: 480 },
-            { x: width - 170, y: 480 },
-            { x: cx, y: 75 }
+            { x: 200, y: 230 },
+            { x: width - 200, y: 230 },
+            { x: cx, y: 330 },
+            { x: 170, y: 430 },
+            { x: width - 170, y: 430 },
+            { x: width - 225, y: 50 },
+            { x: 225, y: 50 }
         ];
 
-        //uno empieza activo y luego cada 20s sale otro
+        //uno empieza activo y luego cada 20s sale otrodw
         this.spawnPowerup();
         this.time.addEvent({
-            delay: 20000,
+            delay: 2000,
             loop: true,
             callback: () => this.spawnPowerup()
         });
@@ -202,7 +203,7 @@ export class GameScene extends Phaser.Scene {
 
         //animacion explosion y camera shake
         const exp = this.add.sprite(x, y, 'exp_1');
-        exp.setDisplaySize(radius * 2, radius * 2);
+        exp.setScale(radius / 300);//probar 
         exp.play('explosion');
         exp.once('animationcomplete', () => exp.destroy());
 
