@@ -16,7 +16,7 @@ export class GameScene extends Phaser.Scene {
 
         // Fondo
         this.add.image(cx, cy, 'fondo_partida').setDisplaySize(width, height);
-        this.add.rectangle(cx, cy, width, height, 0x000000, 0.75);
+        this.add.rectangle(cx, cy, width, height, 0x000000, 0.55);
 
         //suelo
         this.solidPlatforms = this.physics.add.staticGroup();

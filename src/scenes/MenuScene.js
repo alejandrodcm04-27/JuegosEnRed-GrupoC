@@ -12,9 +12,9 @@ export class MenuScene extends Phaser.Scene {
         SettingsManager.playMusic(this, 'musica_menu');
         MenuUI.addBackground(this);
 
-        const logo = this.add.image(cx, cy - 190, 'logo');
-        const scale = Math.min(480 / logo.width, 300 / logo.height);
-        logo.setScale(scale);
+        //const logo = this.add.image(cx, cy - 190, 'logo');
+        //const scale = Math.min(480 / logo.width, 300 / logo.height);
+        //logo.setScale(scale);
         
 
         const buttons = [

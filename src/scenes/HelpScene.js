@@ -59,7 +59,7 @@ export class HelpScene extends Phaser.Scene {
             'MECÁNICAS Y POTENCIADORES:',
             'GARRAFAS: explotan al dispararles, tened cuidado!',
             'MINAS (tenéis 3): pulsa la tecla de mina para plantar y hacerla explotar.',
-            'POTENCIADORES: por hacer...',
+            'POTENCIADORES: 2 disparos de cohete con radio de explosión',
             'PAUSA: pulsa ESC durante la partida.'
         ].join('\n');
 

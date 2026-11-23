@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 const KeyCodes = Phaser.Input.Keyboard.KeyCodes;
 
 const DEFAULT_SETTINGS = {
-    musicVolume: 0.0,
+    musicVolume: 0.2,
     sfxVolume: 0.6,
     controls: {
         player1: {

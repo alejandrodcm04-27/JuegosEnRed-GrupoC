@@ -19,7 +19,7 @@ export class BootScene extends Phaser.Scene {
         this.load.image('jugador2', 'assets/images/jugador2.PNG');
 
         this.load.image('salto_1', 'assets/images/animaciones/salto_1.png');
-        this.load.image('salto_2', 'assets/images/animaciones/salto_2.png');
+        this.load.image('salto_2', 'assets/images/animaciones/salto_2.PNG');
         for (let i = 1; i <= 4; i++) {
             this.load.image(`p1_run_${i}`, `assets/images/animaciones/${i}.png`);
             this.load.image(`p2_run_${i}`, `assets/images/animaciones/${i} (1).png`);
