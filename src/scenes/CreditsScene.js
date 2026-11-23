@@ -26,7 +26,7 @@ export class CreditsScene extends Phaser.Scene {
             '',
             'Hecho con Phaser 3 y Webpack',
             'Arte Pixel Art hecho con Procreate, Photopea y Blender',
-            'Audio: Recursos libres obtenidos de Pixabay',
+            'Audio: Recursos libres obtenidos de Pixabay y bfxr.net',
             'Licencia: Apache 2.0'
         ].join('\n');
 
