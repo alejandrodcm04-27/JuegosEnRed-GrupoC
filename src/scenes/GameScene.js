@@ -88,7 +88,7 @@ export class GameScene extends Phaser.Scene {
         //uno empieza activo y luego cada 20s sale otrodw
         this.spawnPowerup();
         this.time.addEvent({
-            delay: 2000,
+            delay: 10000,
             loop: true,
             callback: () => this.spawnPowerup()
         });
