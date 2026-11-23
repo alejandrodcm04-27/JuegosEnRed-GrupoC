@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { MenuUI } from '../ui/MenuUI.js';
+import { SettingsManager } from '../managers/SettingsManager.js';
 
 export class MenuScene extends Phaser.Scene {
     constructor() {
@@ -8,26 +9,17 @@ export class MenuScene extends Phaser.Scene {
 
     create() {
         const { centerX: cx, centerY: cy } = this.cameras.main;
+        SettingsManager.playMusic(this, 'musica_menu');
         MenuUI.addBackground(this);
 
-        if (this.textures.exists('logo') && this.textures.get('logo').key !== '__MISSING') {
-            const logo = this.add.image(cx, cy - 190, 'logo');
-            const scale = Math.min(480 / logo.width, 190 / logo.height);
-            logo.setScale(scale);
-        } else {
-            this.add.text(cx, cy - 190, 'ONE MORE SHOT', {
-                fontFamily: 'Courier New, monospace',
-                fontSize: '64px',
-                fontStyle: 'bold',
-                color: '#0F9BD7',
-                stroke: '#E94560',
-                strokeThickness: 5
-            }).setOrigin(0.5);
-        }
+        const logo = this.add.image(cx, cy - 190, 'logo');
+        const scale = Math.min(480 / logo.width, 300 / logo.height);
+        logo.setScale(scale);
+        
 
         const buttons = [
-            { label: 'JUGAR (LOCAL 2P)', scene: 'GameScene', color: '#0F9BD7' },
-            { label: 'JUGAR ONLINE', disabled: true },
+            { label: 'JUGAR (LOCAL 2P)', scene: 'GameScene', color: '#ffffff' },
+            { label: 'ONLINE', disabled: true },
             { label: 'AJUSTES', scene: 'SettingsScene', color: '#ffffff' },
             { label: 'AYUDA / CONTROLES', scene: 'HelpScene', color: '#ffffff' },
             { label: 'CRÉDITOS', scene: 'CreditsScene', color: '#ffffff' }
@@ -37,9 +29,9 @@ export class MenuScene extends Phaser.Scene {
             MenuUI.addButton(
                 this,
                 cx,
-                cy - 20 + idx * 64,
+                cy - 25 + idx * 70,
                 btn.label,
-                btn.color || '#6c759c',
+                btn.color || '#00000',
                 () => MenuUI.transitionTo(this, btn.scene),
                 340,
                 48,

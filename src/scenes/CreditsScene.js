@@ -13,26 +13,28 @@ export class CreditsScene extends Phaser.Scene {
 
         const lines = [
             'ONE MORE SHOT',
-            'Juegos en Red · Grado en Diseño y Desarrollo de Videojuegos (URJC)',
             '',
-            'EQUIPO DE DESARROLLO — GRUPO C',
+            'Juegos en Red - Diseño y Desarrollo de Videojuegos (URJC)',
+            '',
+            'EQUIPO - GRUPO C',
+            '',
             'Alejandro Del Campo  (@alejandrodcm04-27)',
             'Hugo Rivera          (@Forni8)',
             'Jesús Mañas          (@whitelyon21)',
             '',
             'RECURSOS',
-            'Motor: Phaser 3 + Webpack 5',
+            '',
+            'Hecho con Phaser 3 y Webpack',
             'Arte Pixel Art hecho con: Aseprite',
             'Audio: Recursos libres obtenidos de Pixabay',
-            'Licencia del proyecto: Apache 2.0'
+            'Licencia: Apache 2.0'
         ].join('\n');
 
-        this.add.rectangle(cx, cy, 860, 440, 0x12152a, 0.9).setStrokeStyle(2, 0x0F9BD7, 0.8);
+        this.add.rectangle(cx, cy, 860, 440, 0x000000, 0.75).setStrokeStyle(2, 0x0AFF00);
         this.add.text(cx, cy, lines, {
             fontFamily: 'Courier New, monospace',
-            fontSize: '19px',
+            fontSize: '22px',
             color: '#ffffff',
-            lineSpacing: 10,
             align: 'center'
         }).setOrigin(0.5);
 

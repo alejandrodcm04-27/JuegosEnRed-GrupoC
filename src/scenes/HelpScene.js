@@ -24,33 +24,33 @@ export class HelpScene extends Phaser.Scene {
         const k = (code) => SettingsManager.getKeyName(code);
 
         const p1Lines = [
-            'JUGADOR',
+            'NULL SOUND',
             `Moverse: ${k(p1.left)} / ${k(p1.right)}`,
             `Saltar: ${k(p1.jump)}   |   Bajar: ${k(p1.down)}`,
             `Disparar: ${k(p1.shoot)}   |   Mina: ${k(p1.mine)}`
         ].join('\n');
 
         const p2Lines = [
-            'JUGADOR',
+            'EDGE RIOT',
             `Moverse: ${k(p2.left)} / ${k(p2.right)}`,
             `Saltar: ${k(p2.jump)}   |   Bajar: ${k(p2.down)}`,
             `Disparar: ${k(p2.shoot)}   |   Mina: ${k(p2.mine)}`
         ].join('\n');
 
-        this.add.rectangle(cx - 250, cy - 95, 460, 150, 0x12152a, 0.9).setStrokeStyle(2, 0x0F9BD7);
-        this.add.text(cx - 250, cy - 95, p1Lines, {
+        this.add.rectangle(cx - 250, cy - 100, 460, 150, 0x000000, 0.75).setStrokeStyle(2, 0x9F00F7);
+        this.add.text(cx - 250, cy - 100, p1Lines, {
             fontFamily: 'Courier New, monospace',
             fontSize: '17px',
-            color: '#d8def7',
+            color: '#ffffff',
             lineSpacing: 10,
             align: 'center'
         }).setOrigin(0.5);
 
-        this.add.rectangle(cx + 250, cy - 95, 460, 150, 0x12152a, 0.9).setStrokeStyle(2, 0xE94560);
-        this.add.text(cx + 250, cy - 95, p2Lines, {
+        this.add.rectangle(cx + 250, cy - 100, 460, 150, 0x000000, 0.75).setStrokeStyle(2, 0xFF0000);
+        this.add.text(cx + 250, cy - 100, p2Lines, {
             fontFamily: 'Courier New, monospace',
             fontSize: '17px',
-            color: '#d8def7',
+            color: '#ffffff',
             lineSpacing: 10,
             align: 'center'
         }).setOrigin(0.5);
@@ -63,7 +63,7 @@ export class HelpScene extends Phaser.Scene {
             'PAUSA: pulsa ESC durante la partida.'
         ].join('\n');
 
-        this.add.rectangle(cx, cy + 120, 960, 200, 0x12152a, 0.9).setStrokeStyle(1, 0xF5C518, 0.8);
+        this.add.rectangle(cx, cy + 120, 960, 200, 0x00000, 0.75).setStrokeStyle(2, 0x0AFF00);
         this.add.text(cx, cy + 120, mechanics, {
             fontFamily: 'Courier New, monospace',
             fontSize: '17px',

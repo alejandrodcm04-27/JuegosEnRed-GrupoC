@@ -3,8 +3,8 @@ import Phaser from 'phaser';
 const KeyCodes = Phaser.Input.Keyboard.KeyCodes;
 
 const DEFAULT_SETTINGS = {
-    musicVolume: 0.5,
-    sfxVolume: 0.5,
+    musicVolume: 0.0,
+    sfxVolume: 0.6,
     controls: {
         player1: {
             left: KeyCodes.A,
@@ -28,10 +28,28 @@ const DEFAULT_SETTINGS = {
 export const SettingsManager = {
     musicVolume: DEFAULT_SETTINGS.musicVolume,
     sfxVolume: DEFAULT_SETTINGS.sfxVolume,
+    currentMusic: null,
 
     controls: {
         player1: { ...DEFAULT_SETTINGS.controls.player1 },
         player2: { ...DEFAULT_SETTINGS.controls.player2 }
+    },
+
+    playMusic(scene, key) {
+        if (this.currentMusic && this.currentMusic.key === key) {
+            return;
+        }
+
+        if (this.currentMusic) {
+            this.currentMusic.stop();
+            this.currentMusic.destroy();
+        }
+
+        this.currentMusic = scene.sound.add(key, {
+            loop: true,
+            volume: this.musicVolume
+        });
+        this.currentMusic.play();
     },
 
     resetDefaults() {

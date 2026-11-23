@@ -1,3 +1,4 @@
+//esto del pong no lo toco por si acaso pero nada chavales no tocar
 export class Paddle {
 
     constructor(scene, id, x, y) {

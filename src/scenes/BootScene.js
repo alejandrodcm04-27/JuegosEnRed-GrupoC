@@ -6,59 +6,86 @@ export class BootScene extends Phaser.Scene {
     }
 
     preload() {
-        
 
-        //
         this.load.image('logo', 'assets/images/logo.png');
         this.load.image('fondo', 'assets/images/fondo.png');
-
-        this.load.image('fondo_partida', 'assets/images/fondo_partida.jpg');
-        this.load.image('vida', 'assets/images/vida.png');
+        this.load.image('fondo_partida', 'assets/images/fondo_partida.png');
+        this.load.image('vida', 'assets/images/vida.PNG');
         this.load.image('suelo', 'assets/images/suelo.png');
         this.load.image('plataforma', 'assets/images/plataforma.png');
         this.load.image('plataforma_movil', 'assets/images/plataforma_movil.png');
 
-        
+        this.load.image('jugador1', 'assets/images/jugador1.PNG');
+        this.load.image('jugador2', 'assets/images/jugador2.PNG');
+
+        this.load.image('salto_1', 'assets/images/animaciones/salto_1.png');
+        this.load.image('salto_2', 'assets/images/animaciones/salto_2.png');
+        for (let i = 1; i <= 4; i++) {
+            this.load.image(`p1_run_${i}`, `assets/images/animaciones/${i}.png`);
+            this.load.image(`p2_run_${i}`, `assets/images/animaciones/${i} (1).png`);
+        }
+
+
+        this.load.image('bala', 'assets/images/bala.PNG');
+        this.load.image('garrafa', 'assets/images/garrafa.png');
+        this.load.image('mina', 'assets/images/mina.PNG');
+
+        this.load.image('misil', 'assets/images/Misil.PNG');
+        this.load.image('fotomisil', 'assets/images/powerup_misil.PNG');
+
+        //exexplosion
+        for (let i = 1; i <= 16; i++) {
+            this.load.image(`exp_${i}`, `assets/images/explosion/ExplisionPixelArt (${i}).png`);
+        }
+
+        //sonidos
         this.load.audio('hit', 'assets/audio/hit.mp3');
-        this.load.audio('music', 'assets/audio/music.mp3');
+        this.load.audio('shoot', 'assets/audio/shoot.wav');
+        this.load.audio('boom', 'assets/audio/boom.wav');
+        this.load.audio('musica_menu', 'assets/audio/musica_menu.mp3');
+        this.load.audio('musica_partida', 'assets/audio/musica_partida.mp3');
+        this.load.audio('musica_fin', 'assets/audio/musica_fin.mp3');
     }
 
     create() {
-        this.createPlaceholderTextures();
-        this.scene.start('MenuScene');
-    }
-
-    createPlaceholderTextures() {
-        //J1
-        this.makeRectTexture('player1_tex', 24, 36, 0x0F9BD7, 0xffffff);
-        //j2
-        this.makeRectTexture('player2_tex', 24, 36, 0xE94560, 0xffffff);
-        //Plataforma
-        this.makeRectTexture('platform_tex', 160, 18, 0x2d3561, 0x0F9BD7);
-        // Plataforma movil
-        this.makeRectTexture('moving_platform_tex', 120, 16, 0x3b2c5c, 0xF5C518);
-        // Bala normal
-        this.makeRectTexture('bullet_tex', 10, 4, 0xF5C518);
-        // Cohete
-        this.makeRectTexture('rocket_tex', 16, 8, 0xFF5733, 0xffffff);
-        // Garrafa de gasolina
-        this.makeRectTexture('canister_tex', 22, 30, 0xFF5733, 0xF5C518);
-        // Mina
-        this.makeRectTexture('mine_tex', 14, 8, 0xE94560, 0xffffff);
-        // Power-up
-        this.makeRectTexture('powerup_tex', 20, 20, 0xF5C518, 0xffffff);
-    }
-
-    makeRectTexture(key, w, h, fillColor, borderColor = null) {
-        if (this.textures.exists(key)) return;
-        const g = this.add.graphics();
-        g.fillStyle(fillColor, 1);
-        g.fillRect(0, 0, w, h);
-        if (borderColor !== null) {
-            g.lineStyle(2, borderColor, 1);
-            g.strokeRect(1, 1, w - 2, h - 2);
+        const frames = [];
+        for (let i = 1; i <= 16; i++) {
+            frames.push({ key: `exp_${i}` });
         }
-        g.generateTexture(key, w, h);
-        g.destroy();
+
+        this.anims.create({
+            key: 'explosion',
+            frames: frames,
+            frameRate: 24,
+            repeat: 0
+        });
+
+        this.scene.start('MenuScene');
+
+        this.anims.create({
+            key: 'p1_run',
+            frames: [
+                { key: 'p1_run_1' },
+                { key: 'p1_run_2' },
+                { key: 'p1_run_3' },
+                { key: 'p1_run_4' }
+            ],
+            frameRate: 10,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: 'p2_run',
+            frames: [
+                { key: 'p2_run_1' },
+                { key: 'p2_run_2' },
+                { key: 'p2_run_3' },
+                { key: 'p2_run_4' }
+            ],
+            frameRate: 10,
+            repeat: -1
+        });
     }
+
+    
 }

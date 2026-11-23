@@ -9,21 +9,21 @@ export class PauseScene extends Phaser.Scene {
     create() {
         const { width, height, centerX: cx, centerY: cy } = this.cameras.main;
 
-        this.add.rectangle(cx, cy, width, height, 0x000000, 0.65);
-        this.add.rectangle(cx, cy, 440, 290, 0x12152a, 0.95).setStrokeStyle(2, 0x0F9BD7);
+        this.add.rectangle(cx, cy, width, height, 0x000000, 0.75);
+        this.add.rectangle(cx, cy, 440, 290, 0x000000, 0.75).setStrokeStyle(2, 0xffffff);
 
-        this.add.text(cx, cy - 88, 'PAUSA', {
+        this.add.text(cx, cy - 90, 'PAUSA', {
             fontFamily: 'Courier New, monospace',
             fontSize: '40px',
             fontStyle: 'bold',
-            color: '#F5C518'
+            color: '#0AFF00'
         }).setOrigin(0.5);
 
-        MenuUI.addButton(this, cx, cy - 10, 'CONTINUAR', '#0F9BD7', () => {
+        MenuUI.addButton(this, cx, cy - 10, 'CONTINUAR', '#9F00F7', () => {
             this.resumeGame();
         }, 300, 48);
 
-        MenuUI.addButton(this, cx, cy + 62, 'VOLVER AL MENÚ', '#E94560', () => {
+        MenuUI.addButton(this, cx, cy + 60, 'VOLVER AL MENÚ', '#FF0000', () => {
             this.scene.stop('GameScene');
             this.scene.start('MenuScene');
         }, 300, 48);

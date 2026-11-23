@@ -29,8 +29,8 @@ export class SettingsScene extends Phaser.Scene {
         ];
 
         this.keyButtons = [];
-        this.createPlayerKeyColumn(cx - 270, cy - 100, 'JUGADOR 1', '#0F9BD7', 'player1', actions);
-        this.createPlayerKeyColumn(cx + 270, cy - 100, 'JUGADOR 2', '#E94560', 'player2', actions);
+        this.createPlayerKeyColumn(cx - 270, cy - 100, 'JUGADOR 1', '#9F00F7', 'player1', actions);
+        this.createPlayerKeyColumn(cx + 270, cy - 100, 'JUGADOR 2', '#FF0000', 'player2', actions);
 
         this.input.keyboard.on('keydown', (event) => {
             if (!this.listeningFor) return;
@@ -47,16 +47,16 @@ export class SettingsScene extends Phaser.Scene {
             this.listeningFor = null;
         });
 
-        //botones
+        //boton Reset
         const resetBtn = this.add.text(cx - 210, height - 52, '[ RESTABLECER POR DEFECTO ]', {
             fontFamily: 'Courier New, monospace',
             fontSize: '20px',
             fontStyle: 'bold',
-            color: '#E94560'
+            color: '#FF0000'
         }).setOrigin(0.5).setInteractive({ useHandCursor: true });
 
-        resetBtn.on('pointerover', () => resetBtn.setColor('#F5C518'));
-        resetBtn.on('pointerout', () => resetBtn.setColor('#E94560'));
+        resetBtn.on('pointerover', () => resetBtn.setColor('#0AFF00'));
+        resetBtn.on('pointerout', () => resetBtn.setColor('#FF0000'));
         resetBtn.on('pointerdown', () => this.resetAllSettings());
 
         const backBtn = MenuUI.addBackButton(this, 'MenuScene', 210);
@@ -76,7 +76,7 @@ export class SettingsScene extends Phaser.Scene {
             fontFamily: 'Courier New, monospace',
             fontSize: '22px',
             fontStyle: 'bold',
-            color: '#F5C518'
+            color: '#0AFF00'
         }).setOrigin(0.5);
 
         this.volumeTexts[prop] = valueText;
@@ -103,11 +103,11 @@ export class SettingsScene extends Phaser.Scene {
             fontFamily: 'Courier New, monospace',
             fontSize: '22px',
             fontStyle: 'bold',
-            color: '#0F9BD7'
+            color: '#ffffff'
         }).setOrigin(0.5).setInteractive({ useHandCursor: true });
 
-        btn.on('pointerover', () => btn.setColor('#F5C518'));
-        btn.on('pointerout', () => btn.setColor('#0F9BD7'));
+        btn.on('pointerover', () => btn.setColor('#0AFF00'));
+        btn.on('pointerout', () => btn.setColor('#ffffff'));
         btn.on('pointerdown', onClick);
     }
 
@@ -125,7 +125,7 @@ export class SettingsScene extends Phaser.Scene {
             this.add.text(x - 190, rowY, act.label, {
                 fontFamily: 'Courier New, monospace',
                 fontSize: '18px',
-                color: '#d8def7'
+                color: '#ffffff'
             }).setOrigin(0, 0.5);
 
             const keyCode = SettingsManager.controls[playerId][act.key];
@@ -137,7 +137,7 @@ export class SettingsScene extends Phaser.Scene {
             }).setOrigin(0.5).setInteractive({ useHandCursor: true });
 
             keyBtn.on('pointerover', () => {
-                if (!this.listeningFor) keyBtn.setColor('#F5C518');
+                if (!this.listeningFor) keyBtn.setColor('#0AFF00');
             });
             keyBtn.on('pointerout', () => {
                 if (!this.listeningFor || this.listeningFor.labelObj !== keyBtn) keyBtn.setColor('#ffffff');
@@ -146,7 +146,7 @@ export class SettingsScene extends Phaser.Scene {
                 if (this.listeningFor) this.cancelListening();
                 this.listeningFor = { playerId, actionKey: act.key, labelObj: keyBtn };
                 keyBtn.setText('[ PULSA TECLA ]');
-                keyBtn.setColor('#F5C518');
+                keyBtn.setColor('#0AFF00');
             });
 
             this.keyButtons.push({ playerId, actionKey: act.key, labelObj: keyBtn });
