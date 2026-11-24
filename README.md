@@ -310,17 +310,52 @@ flowchart TD
 
 ## 10. Fase 2: Desarrollo del juego en local
 
-### 10.1. Funcionalidades implementadas en la Fase 2
+### 10.1. Funcionalidades implementadas Fase 2
 
-- **Escenas y navegación:** Pantalla de carga (`BootScene`), menú principal (`MenuScene`), ajustes (`SettingsScene`), ayuda (`HelpScene`), créditos (`CreditsScene`), pausa (`PauseScene`) y partida (`GameScene`), con transiciones suaves y navegación mediante ratón y teclado.
-- **Ajustes configurables:** Control independiente de volumen de música y efectos de sonido mediante `SettingsManager`, además de personalización de controles para ambos jugadores.
-- **Movimiento y animaciones:** Desplazamiento lateral, salto, bajada a través de plataformas, plataforma móvil y animaciones de estado (reposo, carrera y salto) para el Jugador 1 y el Jugador 2.
-- **Combate y entorno:** Disparo en 8 direcciones, garrafas explosivas sin reaparición, 3 minas remotas por jugador y reacciones en cadena con empuje, sacudida de cámara y animación de explosión de 16 fotogramas.
-- **Potenciador de lanzacohetes:** Comienza con un potenciador activo en el mapa y genera uno nuevo cada 20 segundos en una de las 6 posiciones preestablecidas. Otorga 2 disparos de misil explosivo con un radio de 150 píxeles.
+- **Escenas y navegación:** Pantalla de carga (`BootScene`), menú principal (`MenuScene`), ajustes (`SettingsScene`), ayuda (`HelpScene`), créditos (`CreditsScene`), pausa (`PauseScene`) y partida (`GameScene`), con transiciones y navegación mediante ratón y teclado.
+
+![Menú final](img/fotomenufinal.png)
+
+*Figura 12. Menú final de One More Shot.*
+
+- **Ajustes configrables:** Control independiente de volumen de música y efectos de sonido mediante `SettingsManager` y personalización de teclas para ambos jugadores.
+
+![Menú ajustes](img/fotoajustesfinal.png)
+
+*Figura 13. Menú de Ajustes de One More Shot.*
+
+- **Movimiento y animaciones:** Los jugadores se mueven lateralmente con una animación, saltan (frame de animacion distinto) y pueden atravesar las plataformas. También hay una plataforma móvil para poder alcanzar el powerup en 2 de sus spawns.
+
+![Sprite Jugador 1](img/jugador1.png)
+![Sprite Jugador 2](img/jugador2.png)
+
+*Figura 14 y 15. Sprite final personajes.*
+
+- **Combate y entorno:** Disparo en 8 direccione por la combinacion de teclas, garrafas explosivas (sin reaparición) y 3 minas por jugador. Las explosiones se encadenan si otro objeto (cphete, garrafa o mina) se encuentra en su radio, tienen animación y empujan a los jugadores.
+
+![Arena](img/fotopartidafinal.png)
+
+*Figura 16. Arena.*
+
+![Arena](img/mina.png)
+
+*Figura 17. Mina.*
+
+![Arena](img/garrafa.png)
+
+*Figura 18. Garrafa.*
+
+- **Potenciador de lanzacohetes:** Comienza uno activo en el mapa y genera uno nuevo cada 20 segundos en una de las 6 posiciones preestablecidas. Otorga 2 disparos de misil explosivo con un radio de 150 píxeles.
+
+![Icono Powerup](img/powerup_misil.png)
+![Misil](img/Misil.png)
+
+*Figura 19 y 20. Powerup Misil y Proyectil Misil.*
+
 - **Sistema de vidas y fin de partida:** Marcador con 3 vidas por jugador y pantalla de victoria con opciones para jugar la revancha o volver al menú principal.
-- **Sonido:** Tres pistas musicales diferenciadas para el menú, la partida y el fin de combate, junto con efectos de disparo (`shoot`), impacto (`hit`) y explosión (`boom`).
+- **Sonido:** Tres canciones diferentes para el menú, la partida y el fin de combate, junto con efectos de disparo (`shoot`), impacto (`hit`) y explosión (`boom`).
 
-### 10.3. Estructura del proyecto
+### 10.2. Carpetas del proyecto
 
 - `public/assets/images/`: Gráficos de personajes, animaciones, explosión, escenario, proyectiles e interfaz.
 - `public/assets/audio/`: Pistas de música y efectos de sonido.
@@ -328,6 +363,7 @@ flowchart TD
 - `src/entities/`: Lógica de los jugadores (`Player.js`).
 - `src/managers/`: Gestión de ajustes con controles y audio (`SettingsManager.js`).
 - `src/ui/`: Elementos reutilizables de la interfaz (`MenuUI.js`).
+
 
 
 
