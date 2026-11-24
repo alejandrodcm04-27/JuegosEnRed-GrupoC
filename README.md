@@ -79,8 +79,8 @@ El objetivo de cada jugador es eliminar al oponente utilizando armas de fuego, e
 | Saltar | `W` | `↑` |
 | Bajar de plataforma | `S` | `↓` |
 | Apuntar | `W``A``S``D` | `↑``←``↓``→` |
-| Poner Mina | `Q` | `-` |
-| Activar Mina (solo tras ponerla) | `Q` | `-` |
+| Poner Mina | `Q` | `M` |
+| Activar Mina (solo tras ponerla) | `Q` | `M` |
 | Disparar | Espacio | Enter |
 | Pausa | `Esc` | `Esc` |
 
@@ -201,7 +201,7 @@ El juego utiliza un estilo Pixel Art minimalista (será creado en Aseprite), com
 - **Jugador 1:** #9F00F7 
 - **Jugador 2:** #FF0000
 - **Objetos:** #0AFF00 
-- **Texto/UI:** #464646
+- **Texto/UI:** #FFFFFF
 
 ### 5.4. Aspectos técnicos: cámara y representación
 
@@ -306,6 +306,28 @@ flowchart TD
 
 [3] CD Projekt Red (2020). Cyberpunk 2077. Referencia temática, estética y la figura del cazarrecompensas letal.
 
+---
+
+## 10. Fase 2: Desarrollo del juego en local
+
+### 10.1. Funcionalidades implementadas en la Fase 2
+
+- **Escenas y navegación:** Pantalla de carga (`BootScene`), menú principal (`MenuScene`), ajustes (`SettingsScene`), ayuda (`HelpScene`), créditos (`CreditsScene`), pausa (`PauseScene`) y partida (`GameScene`), con transiciones suaves y navegación mediante ratón y teclado.
+- **Ajustes configurables:** Control independiente de volumen de música y efectos de sonido mediante `SettingsManager`, además de personalización de controles para ambos jugadores.
+- **Movimiento y animaciones:** Desplazamiento lateral, salto, bajada a través de plataformas, plataforma móvil y animaciones de estado (reposo, carrera y salto) para el Jugador 1 y el Jugador 2.
+- **Combate y entorno:** Disparo en 8 direcciones, garrafas explosivas sin reaparición, 3 minas remotas por jugador y reacciones en cadena con empuje, sacudida de cámara y animación de explosión de 16 fotogramas.
+- **Potenciador de lanzacohetes:** Comienza con un potenciador activo en el mapa y genera uno nuevo cada 20 segundos en una de las 6 posiciones preestablecidas. Otorga 2 disparos de misil explosivo con un radio de 150 píxeles.
+- **Sistema de vidas y fin de partida:** Marcador con 3 vidas por jugador y pantalla de victoria con opciones para jugar la revancha o volver al menú principal.
+- **Sonido:** Tres pistas musicales diferenciadas para el menú, la partida y el fin de combate, junto con efectos de disparo (`shoot`), impacto (`hit`) y explosión (`boom`).
+
+### 10.3. Estructura del proyecto
+
+- `public/assets/images/`: Gráficos de personajes, animaciones, explosión, escenario, proyectiles e interfaz.
+- `public/assets/audio/`: Pistas de música y efectos de sonido.
+- `src/scenes/`: Escenas (`BootScene`, `MenuScene`, `GameScene`, `SettingsScene`, `HelpScene`, `CreditsScene` y `PauseScene`).
+- `src/entities/`: Lógica de los jugadores (`Player.js`).
+- `src/managers/`: Gestión de ajustes con controles y audio (`SettingsManager.js`).
+- `src/ui/`: Elementos reutilizables de la interfaz (`MenuUI.js`).
 
 
 
