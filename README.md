@@ -42,7 +42,7 @@ One More Shot es un juego de acción arcade multijugador en 2D (PvP) en el que c
 - **Armamento dinámico:** Sistema de potenciadores aleatorios que alteran el estado del combate.
 - **Riesgo y recompensa:** Las explosiones de distintos elementos y ciertos potenciadores pueden dañar tanto al enemigo como al jugador que los usa.
 
-![Imagen promocional / key art del juego](img/portada_presentacion.png)
+![Imagen promocional / key art del juego](img/fondo.png)
 
 *Figura 1. Imagen promocional de One More Shot.*
 
@@ -326,8 +326,8 @@ flowchart TD
 
 - **Movimiento y animaciones:** Los jugadores se mueven lateralmente con una animación, saltan (frame de animacion distinto) y pueden atravesar las plataformas. También hay una plataforma móvil para poder alcanzar el powerup en 2 de sus spawns.
 
-![Sprite Jugador 1](img/jugador1.png)
-![Sprite Jugador 2](img/jugador2.png)
+![Sprite Jugador 1](img/jugador1.PNG)
+![Sprite Jugador 2](img/jugador2.PNG)
 
 *Figura 14 y 15. Sprite final personajes.*
 
@@ -337,7 +337,7 @@ flowchart TD
 
 *Figura 16. Arena.*
 
-![Arena](img/mina.png)
+![Arena](img/mina.PNG)
 
 *Figura 17. Mina.*
 
@@ -347,8 +347,8 @@ flowchart TD
 
 - **Potenciador de lanzacohetes:** Comienza uno activo en el mapa y genera uno nuevo cada 20 segundos en una de las 6 posiciones preestablecidas. Otorga 2 disparos de misil explosivo con un radio de 150 píxeles.
 
-![Icono Powerup](img/powerup_misil.png)
-![Misil](img/Misil.png)
+![Icono Powerup](img/powerup_misil.PNG)
+![Misil](img/Misil.PNG)
 
 *Figura 19 y 20. Powerup Misil y Proyectil Misil.*
 
